@@ -56,7 +56,7 @@ public static class MauiProgram
         builder.Services
             .AddKernel()
             .AddAzureOpenAIChatCompletion(config["ModelDeployment"]!, config["AOAIEndpoint"]!, config["AOAIKey"]!)
-            .AddOpenAIChatCompletion("phi-3-mini-q4", new Uri("http://localhost:5272/v1/chat/completions"), null, serviceId: "localmodel")
+            .AddOpenAIChatCompletion("lmstudio-community/Phi-3.1-mini-4k-instruct-GGUF", new Uri("http://localhost:5272/v1/chat/completions"), null, serviceId: "localmodel")
             .Plugins.AddFromType<OrganizeDesktopPlugin>();
 
         builder.Services.AddSingleton<MainPage>();
